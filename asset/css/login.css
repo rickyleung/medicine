@@ -1,0 +1,17 @@
+/*
+ * 登录
+ * 
+ * @author: Ricky
+ */
+
+body{margin:0; text-align:center; padding-top:70px; font-size:14px; background:url(images/bg.png)}
+.login-form{margin:0 auto; width:500px; height:200px; padding-top:50px; background-color:#2980b9; border-radius:10px; box-shadow:0 0 10px #888; position:relative}
+form{margin:0}
+form div{height:50px; line-height:50px; overflow:hidden}
+form div label{float:left; width:80px; margin-left:45px; color:#fff; font-weight:bold; text-align:left}
+form div .elm{float:left; height:22px; width:300px; padding:4px 7px; margin-top:9px; font-size:16px; border:1px solid #cdcdcd; outline:none}
+form div .btn{float:right; width:100px; height:40px; padding:0; margin:10px 60px 0 0; border:0; background:url(images/btn-login.png); font-size:14px; cursor:pointer}
+p{color:#666; margin:20px 0}
+.tip{position:absolute; left:150px; top:0; width:200px; height:30px; line-height:30px; background:#fff799; border-bottom-left-radius:10px; border-bottom-right-radius:10px}
+.icon{width:128px; height:128px; background:url(images/icon-login.png); position:absolute; left:0; top:150px}
+.password-form{height:220px}

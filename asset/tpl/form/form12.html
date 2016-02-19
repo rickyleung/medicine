@@ -1,0 +1,123 @@
+<!--患者信息-个人史 + 过敏史-->
+<script id="tpl-form12" type="text/html">
+<h2>患者信息-个人史、过敏史</h2>
+<h3>个人史</h3>
+<div class="row">
+    <span class="label">吸烟史</span>
+    <input type="radio" hidefocus="true" title="有" name="smoke" value="1" ui="type:Radio;id:Smoke1;{{disabled}}" />
+    <input type="radio" hidefocus="true" title="无" name="smoke" value="2" ui="type:Radio;id:Smoke2;{{disabled}}" />
+    <input type="radio" hidefocus="true" title="不详" name="smoke" value="3" ui="type:Radio;id:Smoke3;{{disabled}}" />
+</div>
+<div class="row">
+    <span class="label">饮酒史</span>
+    <input type="radio" hidefocus="true" title="有" name="drink" value="1" ui="type:Radio;id:Drink1;{{disabled}}" />
+    <input type="radio" hidefocus="true" title="无" name="drink" value="2" ui="type:Radio;id:Drink2;{{disabled}}" />
+    <input type="radio" hidefocus="true" title="不详" name="drink" value="3" ui="type:Radio;id:Drink3;{{disabled}}" />
+</div>
+
+<h3>过敏史</h3>
+<div class="row">
+    <span class="label">食物过敏史</span>
+    <input type="radio" hidefocus="true" title="有" name="food" value="1" ui="type:Radio;id:Food1;{{disabled}}" />
+    <input type="radio" hidefocus="true" title="无" name="food" value="2" ui="type:Radio;id:Food2;{{disabled}}" />
+    <input type="radio" hidefocus="true" title="不详" name="food" value="3" ui="type:Radio;id:Food3;{{disabled}}" />
+</div>
+<div class="row sub auto food" style="display:none">
+    {{#save}}<div><a href="javascript:void(0)" hidefocus="true" class="add-food add-btn">添加一行</a></div>{{/save}}
+</div>
+
+<div class="row">
+    <span class="label">药物过敏史</span>
+    <input type="radio" hidefocus="true" title="有" name="drug" value="1" ui="type:Radio;id:Drug1;{{disabled}}" />
+    <input type="radio" hidefocus="true" title="无" name="drug" value="2" ui="type:Radio;id:Drug2;{{disabled}}" />
+    <input type="radio" hidefocus="true" title="不详" name="drug" value="3" ui="type:Radio;id:Drug3;{{disabled}}" />
+</div>
+<div class="row sub auto drug" style="display:none">
+    {{#save}}<div><a href="javascript:void(0)" hidefocus="true" class="add-drug add-btn">添加一行</a></div>{{/save}}
+</div>
+
+<div class="row">
+    <span class="label">其他物质</span>
+    <input type="radio" hidefocus="true" title="有" name="material" value="1" ui="type:Radio;id:Material1;{{disabled}}" />
+    <input type="radio" hidefocus="true" title="无" name="material" value="2" ui="type:Radio;id:Material2;{{disabled}}" />
+    <input type="radio" hidefocus="true" title="不详" name="material" value="3" ui="type:Radio;id:Material3;{{disabled}}" />
+</div>
+<div class="row sub auto material" style="display:none">
+    {{#save}}<div><a href="javascript:void(0)" hidefocus="true" class="add-material add-btn">添加一行</a></div>{{/save}}
+</div>
+
+{{#save}}
+<div class="bottom">
+    <div ui="type:Button;id:Save;skin:largeem">保 存</div>
+</div>
+{{/save}}
+</script>
+
+<script id="tpl-form12-food" type="text/html">
+{{#food}}
+<div class="food-block block" no="{{no}}">
+    <div>
+        <strong>过敏食物名称</strong>
+        <input type="text" value="{{name}}" ui="type:TextInput;id:FoodName{{no}};width:200;{{disabled}}" />
+    </div>
+    <div><strong>过敏表现</strong>
+        <input type="checkbox" hidefocus="true" title="特应性皮炎" name="food-allergy{{no}}" value="1" ui="type:CheckBox;id:FoodAllergy{{no}}_1;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="过敏性鼻炎" name="food-allergy{{no}}" value="2" ui="type:CheckBox;id:FoodAllergy{{no}}_2;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="哮喘" name="food-allergy{{no}}" value="3" ui="type:CheckBox;id:FoodAllergy{{no}}_3;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="喉头水肿" name="food-allergy{{no}}" value="4" ui="type:CheckBox;id:FoodAllergy{{no}}_4;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="过敏性休克" name="food-allergy{{no}}" value="5" ui="type:CheckBox;id:FoodAllergy{{no}}_5;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="消化系统症状" name="food-allergy{{no}}" value="6" ui="type:CheckBox;id:FoodAllergy{{no}}_6;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="其他" name="food-allergy{{no}}" value="8" ui="type:CheckBox;id:FoodAllergy{{no}}_8;{{disabled}}" />
+        <input type="text" value="{{txt}}" ui="type:TextInput;id:CustomFoodAllergyName{{no}};width:80;{{disabled}}" />
+    </div>
+    {{#save}}<a href="javascript:void(0)" hidefocus="true" class="del-food del-btn">删除此行</a>{{/save}}
+</div>
+{{/food}}
+</script>
+
+<script id="tpl-form12-drug" type="text/html">
+{{#drug}}
+<div class="drug-block block" no="{{no}}">
+    <div style="overflow:hidden">
+        <strong class="f">过敏药物名称</strong>
+        <input type="text" class="f mt7" value="{{name}}" ui="type:TextInput;id:DrugName{{no}};width:200;{{disabled}}" />
+        <strong class="f">过敏药物分类</strong>
+        <div ui="type:Select;id:DrugType{{no}};width:100;{{disabled}}"></div>
+    </div>
+    <div><strong>过敏表现</strong>
+        <input type="checkbox" hidefocus="true" title="特应性皮炎" name="drug-allergy{{no}}" value="1" ui="type:CheckBox;id:DrugAllergy{{no}}_1;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="过敏性鼻炎" name="drug-allergy{{no}}" value="2" ui="type:CheckBox;id:DrugAllergy{{no}}_2;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="哮喘" name="drug-allergy{{no}}" value="3" ui="type:CheckBox;id:DrugAllergy{{no}}_3;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="喉头水肿" name="drug-allergy{{no}}" value="4" ui="type:CheckBox;id:DrugAllergy{{no}}_4;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="过敏性休克" name="drug-allergy{{no}}" value="5" ui="type:CheckBox;id:DrugAllergy{{no}}_5;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="消化系统症状" name="drug-allergy{{no}}" value="6" ui="type:CheckBox;id:DrugAllergy{{no}}_6;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="皮试阳性" name="drug-allergy{{no}}" value="7" ui="type:CheckBox;id:DrugAllergy{{no}}_7;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="其他" name="drug-allergy{{no}}" value="8" ui="type:CheckBox;id:DrugAllergy{{no}}_8;{{disabled}}" />
+        <input type="text" value="{{txt}}" ui="type:TextInput;id:CustomDrugAllergyName{{no}};width:80;{{disabled}}" />
+    </div>
+    {{#save}}<a href="javascript:void(0)" hidefocus="true" class="del-drug del-btn">删除此行</a>{{/save}}
+</div>
+{{/drug}}
+</script>
+
+<script id="tpl-form12-material" type="text/html">
+{{#other}}
+<div class="material-block block" no="{{no}}">
+    <div>
+        <strong>过敏物质名称</strong>
+        <input type="text" value="{{name}}" ui="type:TextInput;id:MaterialName{{no}};width:200;{{disabled}}" />
+    </div>
+    <div><strong>过敏表现</strong>
+        <input type="checkbox" hidefocus="true" title="特应性皮炎" name="material-allergy{{no}}" value="1" ui="type:CheckBox;id:MaterialAllergy{{no}}_1;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="过敏性鼻炎" name="material-allergy{{no}}" value="2" ui="type:CheckBox;id:MaterialAllergy{{no}}_2;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="哮喘" name="material-allergy{{no}}" value="3" ui="type:CheckBox;id:MaterialAllergy{{no}}_3;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="喉头水肿" name="material-allergy{{no}}" value="4" ui="type:CheckBox;id:MaterialAllergy{{no}}_4;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="过敏性休克" name="material-allergy{{no}}" value="5" ui="type:CheckBox;id:MaterialAllergy{{no}}_5;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="消化系统症状" name="material-allergy{{no}}" value="6" ui="type:CheckBox;id:MaterialAllergy{{no}}_6;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="其他" name="material-allergy{{no}}" value="8" ui="type:CheckBox;id:MaterialAllergy{{no}}_8;{{disabled}}" />
+        <input type="text" value="{{txt}}" ui="type:TextInput;id:CustomMaterialAllergyName{{no}};width:80;{{disabled}}" />
+    </div>
+    {{#save}}<a href="javascript:void(0)" hidefocus="true" class="del-material del-btn">删除此行</a>{{/save}}
+</div>
+{{/other}}
+</script>

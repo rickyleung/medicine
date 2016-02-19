@@ -1,0 +1,203 @@
+<!--辅助检查-实验室检查-->
+<script id="tpl-form52" type="text/html">
+<h2>辅助检查-实验室检查</h2>
+<div class="row">
+    <input type="radio" hidefocus="true" title="做" name="done" value="1" ui="type:Radio;id:Done1;{{disabled}}" />
+    <input type="radio" hidefocus="true" title="未做" name="done" value="2" ui="type:Radio;id:Done2;{{disabled}}" />
+</div>
+
+<div class="exam" style="display:none">
+<h3>病原学检查</h3>
+<div class="row">
+    <span class="label">送检日期</span>
+    <div ui="type:Calendar;id:ExamDate;{{disabled}}"></div>
+</div>
+<div class="row">
+    <span class="label">送检样本</span>
+    <input type="radio" hidefocus="true" title="血液" name="sample" value="1" ui="type:Radio;id:Sample1;{{disabled}}" />
+    <input type="radio" hidefocus="true" title="痰液" name="sample" value="2" ui="type:Radio;id:Sample2;{{disabled}}" />
+    <input type="radio" hidefocus="true" title="其他" name="sample" value="3" ui="type:Radio;id:Sample3;{{disabled}}" />
+    <input type="text" value="{{data.sampletxt}}" ui="type:TextInput;id:SampleName;width:100;{{disabled}}" />
+</div>
+<div class="row">
+    <span class="label">病原学结果</span>
+    <input type="checkbox" hidefocus="true" title="细菌培养" name="result" value="1" ui="type:CheckBox;id:Result1;{{disabled}}" />&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" value="{{data.resulttxt1}}" ui="type:TextInput;id:Result1Content;width:200;{{disabled}}" />
+</div>
+<div class="row sub">
+    <input type="checkbox" hidefocus="true" title="支原体抗体" name="result" value="2" ui="type:CheckBox;id:Result2;{{disabled}}" />
+    <input type="text" value="{{data.resulttxt2}}" ui="type:TextInput;id:Result2Content;width:200;{{disabled}}" />
+</div>
+<div class="row sub">
+    <input type="checkbox" hidefocus="true" title="病毒咽拭子" name="result" value="3" ui="type:CheckBox;id:Result3;{{disabled}}" />
+    <input type="text" value="{{data.resulttxt3}}" ui="type:TextInput;id:Result3Content;width:200;{{disabled}}" />
+</div>
+
+<h3>血糖测定</h3>
+<div class="e1">
+    {{#save}}
+    <div class="row">
+        <a href="javascript:void(0)" hidefocus="true" class="add-e1 add-btn">添加一行</a>
+    </div>
+    {{/save}}
+</div>
+
+<h3>血常规检查</h3>
+<div class="e2">
+    {{#save}}
+    <div class="row">
+        <a href="javascript:void(0)" hidefocus="true" class="add-e2 add-btn">添加一行</a>
+    </div>
+    {{/save}}
+</div>
+
+<h3>实验室检查（肝功五项）</h3>
+<div class="e3">
+    {{#save}}
+    <div class="row">
+        <a href="javascript:void(0)" hidefocus="true" class="add-e3 add-btn">添加一行</a>
+    </div>
+    {{/save}}
+</div>
+
+<h3>实验室检查（肾功两项） </h3>
+<div class="e4">
+    {{#save}}
+    <div class="row">
+        <a href="javascript:void(0)" hidefocus="true" class="add-e4 add-btn">添加一行</a>
+    </div>
+    {{/save}}
+</div>
+
+</div>
+
+{{#save}}
+<div class="bottom">
+    <div ui="type:Button;id:Save;skin:largeem">保 存</div>
+</div>
+{{/save}}
+</script>
+
+<script id="tpl-form52-e1" type="text/html">
+{{#data}}
+<div class="e1-block" no="{{no}}">
+    <div class="row sub">
+        <span class="label">检查日期</span>
+        <div ui="type:Calendar;id:E1ExamDate{{no}};{{disabled}}"></div>
+    </div>
+    <div class="row sub">
+        <span class="label">空腹血糖FPG</span>
+        <input type="text" class="en" value="{{value1}}" ui="type:TextInput;id:E1V1{{no}};width:100;{{disabled}}" /> <span>mmol/L</span>
+    </div>
+    <div class="row sub">
+        <span class="label">餐后血糖PPG</span>
+        <input type="text" class="en" value="{{value2}}" ui="type:TextInput;id:E1V2{{no}};width:100;{{disabled}}" /> <span>mmol/L</span>
+    </div>
+    {{#save}}
+    <div class="row sub">
+        <a href="javascript:void(0)" hidefocus="true" class="del-e1 del-btn">删除此行</a>
+    </div>
+    {{/save}}
+</div>
+{{/data}}
+</script>
+
+<script id="tpl-form52-e2" type="text/html">
+{{#data}}
+<div class="e2-block" no="{{no}}">
+    <div class="row sub">
+        <span class="label">检查日期</span>
+        <div ui="type:Calendar;id:E2ExamDate{{no}};{{disabled}}"></div>
+    </div>
+    <div class="row sub">
+        <span class="label">血红蛋白HB</span>
+        <input type="text" class="en" value="{{value1}}" ui="type:TextInput;id:E2V1{{no}};width:100;{{disabled}}" /> <span>g/L</span>
+    </div>
+    <div class="row sub">
+        <span class="label">红细胞RBC</span>
+        <input type="text" class="en" value="{{value2}}" ui="type:TextInput;id:E2V2{{no}};width:100;{{disabled}}" /> <span>×10(12)/L</span>
+    </div>
+    <div class="row sub">
+        <span class="label">白细胞WBC</span>
+        <input type="text" class="en" value="{{value3}}" ui="type:TextInput;id:E2V3{{no}};width:100;{{disabled}}" /> <span>×10(9)/L</span>
+    </div>
+    <div class="row sub">
+        <span class="label">中性粒细胞NEUT</span>
+        <input type="text" class="en" value="{{value4}}" ui="type:TextInput;id:E2V4{{no}};width:100;{{disabled}}" /> <span>%</span>
+    </div>
+    <div class="row sub">
+        <span class="label">中性粒细胞NEUT</span>
+        <input type="text" class="en" value="{{value5}}" ui="type:TextInput;id:E2V5{{no}};width:100;{{disabled}}" /> <span>×10(9)/L</span>
+    </div>
+    <div class="row sub">
+        <span class="label">血小板PLT</span>
+        <input type="text" class="en" value="{{value6}}" ui="type:TextInput;id:E2V6{{no}};width:100;{{disabled}}" /> <span>×10(9)/L</span>
+    </div>
+    {{#save}}
+    <div class="row sub">
+        <a href="javascript:void(0)" hidefocus="true" class="del-e2 del-btn">删除此行</a>
+    </div>
+    {{/save}}
+</div>
+{{/data}}
+</script>
+
+<script id="tpl-form52-e3" type="text/html">
+{{#data}}
+<div class="e3-block" no="{{no}}">
+    <div class="row sub">
+        <span class="label">检查日期</span>
+        <div ui="type:Calendar;id:E3ExamDate{{no}};{{disabled}}"></div>
+    </div>
+    <div class="row sub">
+        <span class="label">谷丙转氨酶ALT</span>
+        <input type="text" class="en" value="{{value1}}" ui="type:TextInput;id:E3V1{{no}};width:100;{{disabled}}" /> <span>U/L</span>
+    </div>
+    <div class="row sub">
+        <span class="label">谷草转氨酶AST</span>
+        <input type="text" class="en" value="{{value2}}" ui="type:TextInput;id:E3V2{{no}};width:100;{{disabled}}" /> <span>U/L</span>
+    </div>
+    <div class="row sub">
+        <span class="label">碱性磷酸酶ALP</span>
+        <input type="text" class="en" value="{{value3}}" ui="type:TextInput;id:E3V3{{no}};width:100;{{disabled}}" /> <span>U/L</span>
+    </div>
+    <div class="row sub">
+        <span class="label wlabel">γ-谷氨酰转肽酶γ-GT</span>
+        <input type="text" class="en" value="{{value4}}" ui="type:TextInput;id:E3V4{{no}};width:100;{{disabled}}" /> <span>U/L</span>
+    </div>
+    <div class="row sub">
+        <span class="label">总胆红素TBIL</span>
+        <input type="text" class="en" value="{{value5}}" ui="type:TextInput;id:E3V5{{no}};width:100;{{disabled}}" /> <span>umol/L</span>
+    </div>
+    {{#save}}
+    <div class="row sub">
+        <a href="javascript:void(0)" hidefocus="true" class="del-e3 del-btn">删除此行</a>
+    </div>
+    {{/save}}
+</div>
+{{/data}}
+</script>
+
+<script id="tpl-form52-e4" type="text/html">
+{{#data}}
+<div class="e4-block" no="{{no}}">
+    <div class="row sub">
+        <span class="label">检查日期</span>
+        <div ui="type:Calendar;id:E4ExamDate{{no}};{{disabled}}"></div>
+    </div>
+    <div class="row sub">
+        <span class="label">尿素氮BUN</span>
+        <input type="text" class="en" value="{{value1}}" ui="type:TextInput;id:E4V1{{no}};width:100;{{disabled}}" /> <span>umol/L</span>
+    </div>
+    <div class="row sub">
+        <span class="label">血肌酐CR</span>
+        <input type="text" class="en" value="{{value2}}" ui="type:TextInput;id:E4V2{{no}};width:100;{{disabled}}" /> <span>umol/L</span>
+    </div>
+    {{#save}}
+    <div class="row sub">
+        <a href="javascript:void(0)" hidefocus="true" class="del-e4 del-btn">删除此行</a>
+    </div>
+    {{/save}}
+</div>
+{{/data}}
+</script>

@@ -1,0 +1,128 @@
+<!--用药小结-->
+<script id="tpl-form60" type="text/html">
+<h2>用药小结</h2>
+<div class="row">
+    <span class="label wlabel">病程首次用药时间</span>
+    <div ui="type:Calendar;id:StartDate;{{disabled}}"></div>
+</div>
+<div class="row">
+    <span class="label wlabel">病程末次用药时间</span>
+    <div ui="type:Calendar;id:EndDate;{{disabled}}"></div>
+</div>
+<div class="row">
+    <span class="label wlabel">痰热清注射液用药结局</span>
+</div>
+<div class="row sub auto">
+    <div>
+        <input type="radio" hidefocus="true" title="痊愈" name="ending" value="1" ui="type:Radio;id:Ending1;{{disabled}}" />
+        <input type="radio" hidefocus="true" title="好转" name="ending" value="2" ui="type:Radio;id:Ending2;{{disabled}}" />
+        <input type="radio" hidefocus="true" title="无变化" name="ending" value="3" ui="type:Radio;id:Ending3;{{disabled}}" />
+        <input type="radio" hidefocus="true" title="加重" name="ending" value="4" ui="type:Radio;id:Ending4;{{disabled}}" />
+        <input type="radio" hidefocus="true" title="死亡" name="ending" value="5" ui="type:Radio;id:Ending5;{{disabled}}" />
+        <input type="radio" hidefocus="true" title="因经济原因停药" name="ending" value="6" ui="type:Radio;id:Ending6;{{disabled}}" />
+        <input type="radio" hidefocus="true" title="因ADE停药" name="ending" value="7" ui="type:Radio;id:Ending7;{{disabled}}" />
+    </div>
+    <div class="death" style="overflow:hidden; display:none">
+        <span class="f">直接死因：</span>
+        <input type="text" class="f mt7" value="{{data.deathReason}}" ui="type:TextInput;id:DeathReason;width:200;{{disabled}}" />
+        <span class="f">死亡时间：</span>
+        <div ui="type:Calendar;id:DeathDate;{{disabled}}"></div>
+    </div>
+</div>
+<div class="row">
+    <span class="label wlabel">是否出现过敏反应症状</span>
+    <input type="radio" hidefocus="true" title="是" name="adr" value="1" ui="type:Radio;id:HasADR1;{{disabled}}" />
+    <input type="radio" hidefocus="true" title="否" name="adr" value="2" ui="type:Radio;id:HasADR2;{{disabled}}" />
+</div>
+<div class="row sub auto adr" style="display:none">
+    <div>
+        <input type="checkbox" hidefocus="true" title="消化系统" name="adr" value="1" ui="type:CheckBox;id:ADR1;{{disabled}}" />：
+        <input type="checkbox" hidefocus="true" title="腹泻" name="adr1" value="1" ui="type:CheckBox;id:ADR1_1;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="腹痛" name="adr1" value="2" ui="type:CheckBox;id:ADR1_2;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="恶心" name="adr1" value="3" ui="type:CheckBox;id:ADR1_3;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="呕吐" name="adr1" value="4" ui="type:CheckBox;id:ADR1_4;{{disabled}}" />
+    </div>
+    <div>
+        <input type="checkbox" hidefocus="true" title="神经系统" name="adr" value="2" ui="type:CheckBox;id:ADR2;{{disabled}}" />：
+        <input type="checkbox" hidefocus="true" title="头晕" name="adr2" value="1" ui="type:CheckBox;id:ADR2_1;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="头痛" name="adr2" value="2" ui="type:CheckBox;id:ADR2_2;{{disabled}}" />
+    </div>
+    <div>
+        <input type="checkbox" hidefocus="true" title="皮肤系统" name="adr" value="3" ui="type:CheckBox;id:ADR3;{{disabled}}" />：
+        <input type="checkbox" hidefocus="true" title="皮疹" name="adr3" value="1" ui="type:CheckBox;id:ADR3_1;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="瘙痒" name="adr3" value="2" ui="type:CheckBox;id:ADR3_2;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="潮红" name="adr3" value="3" ui="type:CheckBox;id:ADR3_3;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="荨麻疹" name="adr3" value="4" ui="type:CheckBox;id:ADR3_4;{{disabled}}" />
+    </div>
+    <div>
+        <input type="checkbox" hidefocus="true" title="呼吸系统损害" name="adr" value="4" ui="type:CheckBox;id:ADR4;{{disabled}}" />：
+        <input type="checkbox" hidefocus="true" title="咳嗽" name="adr4" value="1" ui="type:CheckBox;id:ADR4_1;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="呼吸困难" name="adr4" value="2" ui="type:CheckBox;id:ADR4_2;{{disabled}}" />
+    </div>
+    <div>
+        <input type="checkbox" hidefocus="true" title="心血管系统损害" name="adr" value="5" ui="type:CheckBox;id:ADR5;{{disabled}}" />：
+        <input type="checkbox" hidefocus="true" title="心悸" name="adr5" value="1" ui="type:CheckBox;id:ADR5_1;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="胸闷" name="adr5" value="2" ui="type:CheckBox;id:ADR5_2;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="紫绀" name="adr5" value="3" ui="type:CheckBox;id:ADR5_3;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="血管性水肿" name="adr5" value="4" ui="type:CheckBox;id:ADR5_4;{{disabled}}" />
+    </div>
+    <div>
+        <input type="checkbox" hidefocus="true" title="全身性损害" name="adr" value="6" ui="type:CheckBox;id:ADR6;{{disabled}}" />：
+        <input type="checkbox" hidefocus="true" title="寒颤" name="adr6" value="1" ui="type:CheckBox;id:ADR6_1;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="高热" name="adr6" value="2" ui="type:CheckBox;id:ADR6_2;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="抽搐" name="adr6" value="3" ui="type:CheckBox;id:ADR6_3;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="喉头水肿" name="adr6" value="4" ui="type:CheckBox;id:ADR6_4;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="休克" name="adr6" value="4" ui="type:CheckBox;id:ADR6_5;{{disabled}}" />
+    </div>
+    <div>
+        <input type="checkbox" hidefocus="true" title="其他" name="adr" value="7" ui="type:CheckBox;id:ADR7;{{disabled}}" />：
+        <input type="text" value="{{data.adrtxt}}" ui="type:TextInput;id:CustomADRName;width:200;{{disabled}}" />
+    </div>
+</div>
+<div class="row">
+    <span class="label wlabel">是否出现其他不良反应/事件</span>
+    <input type="radio" hidefocus="true" title="是" name="other-adr" value="1" ui="type:Radio;id:HasOtherADR1;{{disabled}}" />
+    <input type="radio" hidefocus="true" title="否" name="other-adr" value="2" ui="type:Radio;id:HasOtherADR2;{{disabled}}" />
+</div>
+<div class="row">
+    <span class="label">药师干预</span>
+    <span>有无痰热清注射液用药不合理的现象</span>
+    <input type="radio" hidefocus="true" title="有" name="unreasonable" value="1" ui="type:Radio;id:Unreasonable1;{{disabled}}" />
+    <input type="radio" hidefocus="true" title="无" name="unreasonable" value="2" ui="type:Radio;id:Unreasonable2;{{disabled}}" />
+</div>
+<div class="row sub auto">
+    <div>
+        <span>药师是否进行相关干预</span>
+        <input type="radio" hidefocus="true" title="是" name="intervention" value="1" ui="type:Radio;id:Intervention1;{{disabled}}" />
+        <input type="radio" hidefocus="true" title="否" name="intervention" value="2" ui="type:Radio;id:Intervention2;{{disabled}}" />
+    </div>
+    <div class="intervention" style="display:none">
+        <span>药师如何进行干预</span>
+        <input type="text" value="{{data.interventiontxt}}" ui="type:TextInput;id:Intervention;width:200;{{disabled}}" />
+    </div>
+</div>
+<div class="row">
+    <span class="label">经济学指标</span>
+    <span>治疗总费用</span>
+    <input type="text" value="{{data.treatmentCost}}" class="en" ui="type:TextInput;id:Index1;width:100;{{disabled}}" /> 元
+</div>
+<div class="row sub auto">
+    <div>
+        <span>药品总费用</span>
+        <input type="text" value="{{data.drugCost}}" class="en" ui="type:TextInput;id:Index2;width:100;{{disabled}}" /> 元
+    </div>
+    <div>
+        <span>痰热清注射液费用</span>
+        <input type="text" value="{{data.trqCost}}" class="en" ui="type:TextInput;id:Index3;width:100;{{disabled}}" /> 元
+    </div>
+</div>
+<div class="row auto">
+    <span class="label">备注</span>
+    <textarea ui="type:TextInput;id:Remark;width:400;height:100;{{disabled}}">{{data.remark}}</textarea>
+</div>
+{{#save}}
+<div class="bottom">
+    <div ui="type:Button;id:Save;skin:largeem">保 存</div>
+</div>
+{{/save}}
+</script>

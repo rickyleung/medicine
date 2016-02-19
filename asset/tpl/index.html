@@ -1,0 +1,26 @@
+<!--首页-->
+<script id="tpl-index" type="text/html">
+<div class="index-wrap">
+    {{#row1}}
+    <div class="role phm">
+        <a href="javascript:void(0)" class="phm1">新建CRF</a>
+        <a href="javascript:void(0)" class="phm2">新建ADE</a>
+        <a href="#list/" class="phm3">修改旧表/解决质疑</a>
+    </div>
+    {{/row1}}
+    {{#row2}}
+    <div class="role crm">
+        <a href="#supervise/" class="crm1">数据监察</a>
+        <a href="#dict/" class="crm2">数据字典</a>
+        <!--<a href="#upload/" class="crm3">图片上传</a>-->
+    </div>
+    {{/row2}}
+    {{#row3}}
+    <div class="role dm">
+        {{#row31}}<a href="#stat/" class="dm1">全局统计</a>{{/row31}}
+        {{#row32}}<a href="#data/" class="dm2">数据管理</a>{{/row32}}
+        <a href="#account/" class="dm3">账户管理</a>
+    </div>
+    {{/row3}}
+</div>
+</script>

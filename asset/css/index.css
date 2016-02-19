@@ -1,0 +1,26 @@
+/*
+ * 首页
+ * 
+ * @author: Ricky
+ */
+
+.index-wrap{padding:20px 0 50px 30px}
+.role{height:120px; padding-left:130px; margin-bottom:15px; overflow:hidden}
+.phm{background:url(images/icon-phm.png) no-repeat}
+.crm{background:url(images/icon-crm.png) no-repeat}
+.dm{background:url(images/icon-dm.png) no-repeat}
+.role a{
+    float:left; width:140px; height:30px; padding-top:90px; line-height:30px; margin-right:15px;
+    text-align:center; text-decoration:none; color:#fff; font-size:14px; border-radius:10px;
+    background-color:#2980b9; background-position: center 15px; background-repeat:no-repeat
+}
+.role a:hover{background-color:#3498db}
+.role .phm1{background-image:url(images/icon-phm1.png)}
+.role .phm2{background-image:url(images/icon-phm2.png)}
+.role .phm3{background-image:url(images/icon-phm3.png)}
+.role .crm1{background-image:url(images/icon-crm1.png)}
+.role .crm2{background-image:url(images/icon-crm2.png)}
+.role .crm3{background-image:url(images/icon-crm3.png)}
+.role .dm1{background-image:url(images/icon-dm1.png)}
+.role .dm2{background-image:url(images/icon-dm2.png)}
+.role .dm3{background-image:url(images/icon-dm3.png)}

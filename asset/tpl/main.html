@@ -1,0 +1,83 @@
+<!--头部-->
+<script id="tpl-head" type="text/html">
+<div class="logo"></div>
+<span class="info">您好，{{roleName}} - {{userName}}（{{hospitalName}}）
+&nbsp;&nbsp;|&nbsp;&nbsp;<a href="password.jsp" target="_blank">修改密码</a>
+&nbsp;&nbsp;|&nbsp;&nbsp;<a href="{{base}}logout.do">退出</a></span>
+</script>
+
+<!--底部-->
+<script id="tpl-foot" type="text/html">
+Copyright &copy; {{year}}
+</script>
+
+<!--页码-->
+<script id="tpl-page" type="text/html">
+<div class="page">
+    <div class="page-size">
+        <span>每页显示</span>
+        <div ui="type:Select;id:PageSize;width:50"></div>
+        <span>条</span>
+        <span class="row-count"></span>
+    </div>
+    <div class="page-no">
+        <div ui="type:Pager;id:PageNo"></div>
+    </div>
+</div>
+</script>
+
+<!--树形菜单-->
+<script id="tpl-tree" type="text/html">
+<div class="menu-title">{{data.name}}</div>
+<div>
+    {{#data.children}}
+    <a class="menu-item" href="javascript:void(0)" hidefocus="true" id="TreeNode{{id}}">{{name}}</a>
+    {{/data.children}}
+</div>
+</script>
+<script id="tpl-tree-standalone" type="text/html">
+<div class="menu-title-standalone">
+    <a href="javascript:void(0)" hidefocus="true" id="TreeNode{{data.id}}">{{data.name}}</a>
+</div>
+</script>
+
+<!--新建CRF对话框-->
+<script id="tpl-new-crf-dialog" type="text/html">
+<div ui="type:Dialog;id:NewCRFDialog;top:120;width:450;mask:0">
+    <div>新建CRF</div>
+    <div>
+        <div class="query-form">
+            <span>患者姓名缩写：</span>
+            <input ui="type:TextInput;id:NewAbbr;width:80" type="text" class="en" />
+            <span class="error-tip"></span>
+        </div>
+        <div class="query-form">
+            <span>观察表编号：</span>
+            <input ui="type:TextInput;id:NewNo;width:80" type="text" class="en" maxlength="8" />
+            <span class="error-tip"></span>
+        </div>
+    </div>
+    <div>
+        <div ui="type:Button;id:NewCRFOK">确定</div>
+        <div ui="type:Button;id:NewCRFClose">取消</div>
+    </div>
+</div>
+</script>
+
+<!--新建ADR对话框-->
+<script id="tpl-new-adr-dialog" type="text/html">
+<div ui="type:Dialog;id:NewADRDialog;top:120;width:450;mask:0">
+    <div>新建ADE</div>
+    <div>
+        <div class="query-form">
+            <span>请输入对应观察表编号：</span>
+            <input ui="type:TextInput;id:No;width:80" type="text" class="en" maxlength="8" />
+            <span class="error-tip" id="AdrError"></span>
+        </div>
+    </div>
+    <div>
+        <div ui="type:Button;id:NewADROK">确定</div>
+        <div ui="type:Button;id:NewADRClose">取消</div>
+    </div>
+</div>
+</script>

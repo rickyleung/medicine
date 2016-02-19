@@ -1,0 +1,59 @@
+<!--数据管理-->
+<script id="tpl-data" type="text/html">
+<div class="data-wrap">    
+    <h1 class="no-bottom no-border">
+        <span>数据管理</span>
+        <input type="radio" title="CRF" name="field" hidefocus="true" ui="type:Radio;id:CRF" checked />
+        <input type="radio" title="ADE" name="field" hidefocus="true" ui="type:Radio;id:ADR" />
+    </h1>
+    <!--tab-->
+    <div class="tabbar">
+        <a href="javascript:void(0)" hidefocus="true" type="7" class="active">未审核</a>
+        <a href="javascript:void(0)" hidefocus="true" type="8">质疑记录</a>
+    </div>
+    <!--查询条件-->
+    <div class="query-form doubt-form" style="display:none">
+        <input type="radio" title="未解决" name="doubt" hidefocus="true" ui="type:Radio;id:Undealed" checked />
+        <input type="radio" title="已解决" name="doubt" hidefocus="true" ui="type:Radio;id:Dealed" />
+    </div>
+    <div class="query-form doubt-form" style="display:none">
+        <span>质疑人：</span>
+        <input ui="type:TextInput;id:Doubter;width:80" type="text" />
+        <span>质疑时间范围：</span>
+        <div ui="type:Select;id:DoubtRangeType;width:80" class="close-next"></div>
+        <div ui="type:MultiCalendar;id:DoubtRange" style="display:none"></div>
+    </div>
+    <div class="query-form">
+        <span>观察表编号：</span>
+        <input ui="type:TextInput;id:No;width:80" type="text" class="en" />
+        <span>姓名缩写：</span>
+        <input ui="type:TextInput;id:Abbr;width:80" type="text" class="en" />
+        <span>完成度：</span>
+        <div ui="type:Select;id:ProgressType;width:100" class="close-next"></div>
+        <input ui="type:TextInput;id:Progress;width:80" type="text" class="en" style="display:none" />
+    </div>
+    <div class="query-form">
+        <span>创建时间范围：</span>
+        <div ui="type:Select;id:CreateRangeType;width:80" class="close-next"></div>
+        <div ui="type:MultiCalendar;id:CreateRange" style="display:none"></div>
+        <span class="time-label" style="margin-left:10px">提交时间范围：</span>
+        <div ui="type:Select;id:LastModifyRangeType;width:80" class="close-next"></div>
+        <div ui="type:MultiCalendar;id:LastModifyRange" style="display:none"></div>
+    </div>
+    <div class="query-btn">
+        <div ui="type:Button;id:Query;skin:largeem">查 询</div>
+    </div>
+    <!--查询结果-->
+    <div class="no-result" style="display:none">暂无查询结果。</div>
+    <div class="data" style="display:none">
+        <div class="toolbar">
+            <div ui="type:Button;id:DelCRF;">批量删除</div>
+        </div>
+        <div ui="type:Table;id:Grid;select:multi;sortable:1"></div>
+    </div>
+</div>
+</script>
+
+<script id="tpl-data-detail" type="text/html">
+<a href="#crf/{{rount}}/{{id}}" id="{{id}}" class="detail">{{no}}</a>
+</script>

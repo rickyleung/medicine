@@ -1,0 +1,29 @@
+<!--辅助检查-心电图-->
+<script id="tpl-form53" type="text/html">
+<h2>辅助检查-心电图</h2>
+<div class="row">
+    <input type="radio" hidefocus="true" title="做" name="done" value="1" ui="type:Radio;id:Done1;{{disabled}}" />
+    <input type="radio" hidefocus="true" title="未做" name="done" value="2" ui="type:Radio;id:Done2;{{disabled}}" />
+</div>
+<div class="exam" style="display:none">
+    <div class="row">
+        <span class="label">检查日期</span>
+        <div ui="type:Calendar;id:ExamDate;{{disabled}}"></div>
+    </div>
+    <div class="row">
+        <span class="label">是否正常</span>
+        <input type="radio" hidefocus="true" title="是" name="normal" value="1" ui="type:Radio;id:Normal1;{{disabled}}" />
+        <input type="radio" hidefocus="true" title="否" name="normal" value="2" ui="type:Radio;id:Normal2;{{disabled}}" />
+    </div>
+    <div class="row">
+        <span class="label">异常心电图描述</span>
+        <input type="text" value="{{data.description}}" ui="type:TextInput;id:Description;width:100;{{disabled}}" /> <span>心率 _ 次/分</span>
+    </div>
+</div>
+
+{{#save}}
+<div class="bottom">
+    <div ui="type:Button;id:Save;skin:largeem">保 存</div>
+</div>
+{{/save}}
+</script>

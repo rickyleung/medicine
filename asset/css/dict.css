@@ -1,0 +1,16 @@
+/*
+ * 数据字典
+ * 
+ * @author: Ricky
+ */
+
+.dict-bar{width:250px}
+.dict-content{margin-left:250px}
+.dict-item{overflow:hidden}
+.dict-item-list{width:500px; padding:20px}
+.dict-base{float:left; width:250px; padding:10px}
+.dict-title{height:22px; line-height:22px; margin-bottom:10px}
+.dict-title span,
+.dict-title .ui-text,
+.dict-title .ui-button{float:left; margin-right:5px}
+.dict-title p{margin:0; line-height:22px; color:#666; font-weight:bold}

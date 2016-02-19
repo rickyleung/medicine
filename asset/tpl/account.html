@@ -1,0 +1,164 @@
+<!--账户管理-->
+<script id="tpl-account" type="text/html">
+<div class="account-wrap">
+    <h1 class="no-bottom no-border">
+        <span>账户管理</span>
+        <a class="btn new-account" href="javascript:void(0)">添加账户</a>
+        {{#center}}<a class="btn new-center" href="javascript:void(0)" style="display:none">添加中心</a>{{/center}}
+    </h1>
+    <!--tab-->
+    <div class="tabbar">
+        <a href="javascript:void(0)" hidefocus="true" type="1" class="active">账户管理</a>
+        {{#center}}<a href="javascript:void(0)" hidefocus="true" type="2">中心管理</a>{{/center}}
+    </div>
+    <!--查询结果-->
+    <div class="no-result" style="display:none">暂无查询结果。</div>
+    <div class="data" style="display:none">
+        <div class="toolbar">
+            <div ui="type:Button;id:DelAccount;">批量删除</div>
+            {{#center}}<div ui="type:Button;id:DelCenter;" style="display:none">批量删除</div>{{/center}}
+        </div>
+        <div ui="type:Table;id:Grid;select:multi"></div>
+    </div>
+    
+    <!--添加账户对话框-->
+    <div ui="type:Dialog;id:NewAccountDialog;top:110;mask:0">
+        <div>添加账户</div>
+        <div>
+            <div class="query-form">
+                <span class="label">账户名称：</span>
+                <input ui="type:TextInput;id:UserName;width:200" type="text" />
+            </div>
+            <div class="query-form">
+                <span class="label">真实姓名：</span>
+                <input ui="type:TextInput;id:DisplayName;width:200" type="text" />
+            </div>
+            <div class="query-form">
+                <span class="label">密码：</span>
+                <input ui="type:TextInput;id:Password;width:200" type="password" />
+            </div>
+            <div class="query-form">
+                <span class="label">直属管理员：</span>
+                <div ui="type:Select;id:AdminUser;width:200"></div>
+            </div>
+            <div class="query-form">
+                <span class="label">权限：</span>
+                <div ui="type:Select;id:Role;width:200"></div>
+            </div>
+            <div class="query-form">
+                <span class="label">中心名称：</span>
+                <div ui="type:Select;id:Organization;width:200"></div>
+            </div>
+            <div class="query-form">
+                <span class="label">联系方式：</span>
+                <input ui="type:TextInput;id:Contact;width:200" type="text" class="en" />
+            </div>
+        </div>
+        <div>
+            <div ui="type:Button;id:NewAccountOK">添加</div>
+            <div ui="type:Button;id:NewAccountClose">取消</div>
+        </div>
+    </div>
+    
+    <!--编辑账户对话框-->
+    <div ui="type:Dialog;id:EditAccountDialog;top:110;mask:0">
+        <div>编辑账户</div>
+        <div>
+            <div class="query-form">
+                <span class="label">账户名称：</span>
+                <input ui="type:TextInput;id:EUserName;width:200" type="text" />
+            </div>
+            <div class="query-form">
+                <span class="label">真实姓名：</span>
+                <input ui="type:TextInput;id:EDisplayName;width:200" type="text" />
+            </div>
+            <div class="query-form">
+                <span class="label">密码：</span>
+                <input ui="type:TextInput;id:EPassword;width:200" type="password" />
+            </div>
+            <div class="query-form">
+                <span class="label">直属管理员：</span>
+                <div ui="type:Select;id:EAdminUser;width:200"></div>
+            </div>
+            <div class="query-form">
+                <span class="label">权限：</span>
+                <div ui="type:Select;id:ERole;width:200"></div>
+            </div>
+            <div class="query-form">
+                <span class="label">中心名称：</span>
+                <div ui="type:Select;id:EOrganization;width:200"></div>
+            </div>
+            <div class="query-form">
+                <span class="label">联系方式：</span>
+                <input ui="type:TextInput;id:EContact;width:200" type="text" class="en" />
+            </div>
+        </div>
+        <div>
+            <div ui="type:Button;id:EditAccountOK">确定</div>
+            <div ui="type:Button;id:EditAccountClose">取消</div>
+        </div>
+    </div>
+    
+    <!--添加中心对话框-->
+    <div ui="type:Dialog;id:NewCenterDialog;top:170;mask:0">
+        <div>添加中心</div>
+        <div>
+            <div class="query-form">
+                <span class="label">中心名称：</span>
+                <input ui="type:TextInput;id:Name;width:200" type="text" />
+            </div>
+            <div class="query-form">
+                <span class="label">中心编码：</span>
+                <input ui="type:TextInput;id:Code;width:200" type="text" class="en" />
+            </div>
+            <div class="query-form">
+                <span class="label">合同数：</span>
+                <input ui="type:TextInput;id:InstanceNumber;width:200" type="text" class="en" />
+            </div>
+            <div class="query-form">
+                <span class="label">监察员：</span>
+                <div ui="type:Select;id:Superviser;width:200"></div>
+            </div>
+        </div>
+        <div>
+            <div ui="type:Button;id:NewCenterOK">添加</div>
+            <div ui="type:Button;id:NewCenterClose">取消</div>
+        </div>
+    </div>
+    
+    <!--编辑中心对话框-->
+    <div ui="type:Dialog;id:EditCenterDialog;top:170;mask:0">
+        <div>编辑中心</div>
+        <div>
+            <div class="query-form">
+                <span class="label">中心名称：</span>
+                <input ui="type:TextInput;id:EName;width:200" type="text" />
+            </div>
+            <div class="query-form">
+                <span class="label">中心编码：</span>
+                <input ui="type:TextInput;id:ECode;width:200" type="text" class="en" />
+            </div>
+            <div class="query-form">
+                <span class="label">合同数：</span>
+                <input ui="type:TextInput;id:EInstanceNumber;width:200" type="text" class="en" />
+            </div>
+            <div class="query-form">
+                <span class="label">监察员：</span>
+                <div ui="type:Select;id:ESuperviser;width:200"></div>
+            </div>
+        </div>
+        <div>
+            <div ui="type:Button;id:EditCenterOK">确定</div>
+            <div ui="type:Button;id:EditCenterClose">取消</div>
+        </div>
+    </div>
+</div>
+</script>
+
+<script id="tpl-account-name" type="text/html">
+<a id="{{id}}" href="javascript:void(0)" title="修改" class="edit-account">{{userName}}</a>
+</script>
+
+<script id="tpl-center-name" type="text/html">
+<a id="{{id}}" href="javascript:void(0)" title="修改" class="edit-center">{{name}}</a>
+</script>

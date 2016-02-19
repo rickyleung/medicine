@@ -1,0 +1,111 @@
+/*
+ * 公共的样式
+ * 
+ * @author: Ricky
+ */
+
+body{margin:0; font-size:12px; font-family:Arial; background:#fff; cursor:default; height:100%}
+input{font-family:Arial; font-size:12px}
+input.en{ime-mode:disabled}
+img{border:0}
+a{color:#06c}
+
+.error-tip{color:red}
+
+/*页面框架*/
+#Head{height:70px; overflow:hidden; color:#666}
+#Head .logo{float:left; width:600px; height:70px; background-image:url(images/logo.jpg)}
+#Head .info{float:right; line-height:70px; margin-right:40px}
+#Nav{height:30px; overflow:hidden; background-color:#2980b9}
+#Nav a{float:left; height:30px; line-height:30px; padding:0 10px; margin-left:20px; font-size:14px; color:#fff; text-decoration:none}
+#Nav a:hover,
+#Nav a.active{background-color:#3498db}
+#Main{overflow:hidden}
+#Foot{padding:20px 0; line-height:20px; border-top:1px #ddd solid; color:#666; text-align:center; clear:both}
+#Head, #Nav, #Main, #Foot{min-width:1000px}
+
+/*页面标题*/
+h1{font-size:14px; margin:0; padding:20px 0 20px 40px; margin-bottom:20px; border-bottom:1px #a6c0d1 solid; color:#333}
+h1.no-bottom{margin-bottom:0}
+h1.no-border{border-bottom:0}
+h1 .btn{display:inline-block; background:#2980b9; font-weight:normal; width:100px; height:26px; line-height:26px; margin-left:20px; color:#fff; text-align:center; text-decoration:none; border-radius:5px}
+h1 .btn:hover{background:#3498db}
+
+/*左右栏*/
+.main{overflow:hidden}
+.sidebar{float:left; width:200px; padding-bottom:20px}
+.content{margin-left:200px; border-left:1px #ccc solid}
+.crf-form{padding:30px; min-height:400px}
+.chart{height:400px; padding-right:30px}
+.stat-grid{min-height:200px; padding: 10px}
+#UploadContainer{padding:0 22px}
+
+/*进度条*/
+.progressbar{height:20px; line-height:20px; position:relative}
+.progressbar .bar{height:20px; background:#3498db; position:absolute; top:0; left:0; z-index:1}
+.progressbar .progress{height:20px; width:100%; text-align:center; color:#ccc; font-weight:bold; position:absolute; top:0; left:0; z-index:2}
+
+/*菜单*/
+.menu-title{height:30px; line-height:30px; padding-left:30px; border-bottom:1px #ddd solid; color:#666; font-size:12px; background:#f6f7f9 url(images/minus.png) 15px center no-repeat}
+.menu-title-collapse{background:#f6f7f9 url(images/plus.png) 15px center no-repeat}
+.menu-item{display:block; height:30px; line-height:30px; padding-left:45px; border-bottom:1px #ddd solid; color:#666; text-decoration:none}
+.menu-item:hover{background-color:#fff9ee}
+.menu-item-active{background-color:#fff9ee; background-image:url(images/icon-arrow.png); background-position:right center; background-repeat:no-repeat}
+.menu-title-standalone{height:30px; line-height:30px; border-bottom:1px #ddd solid; background:#f6f7f9}
+.menu-title-standalone a{display:block; height:30px; line-height:30px; padding-left:30px; color:#666; font-size:12px; text-decoration:none}
+.menu-title-standalone a:hover{background:#e9e9e9}
+.menu-title-standalone a.active{background-color:#e9e9e9; background-image:url(images/icon-arrow.png); background-position:right center; background-repeat:no-repeat}
+.menu-item span,
+.menu-title-standalone span{display:inline-block; vertical-align:middle; margin-left:10px; padding:0 3px; height:16px; line-height:16px; text-align:center; background-color:#c0392b; color:#fff; font-weight:bold; border-radius:3px}
+
+/*Ajax提示*/
+#Mask{z-index:500; position:absolute; top:0; left:0; width:100%; height:100%; background:#000; filter:alpha(opacity=20); -moz-opacity:0.2; opacity:0.2}
+#Message{z-index:501; position:fixed; top:20px; left:50%; width:200px; margin-left:-100px; line-height:25px; border:1px #d3d2d0 solid; background:#fdf8d0; border-radius:3px; color:#333; text-align:center}
+
+/*Tab*/
+.tabbar{height:27px; padding-left:30px; margin-bottom:20px; background:url(images/tab-bg.png)}
+.tabbar a{float:left; width:110px; height:27px; line-height:27px; margin-right:8px; text-align:center; text-decoration:none; color:#000; background:url(images/tab.png) 0 -27px}
+.tabbar a.active{color:#3b6bad; background:url(images/tab.png); font-weight:bold}
+
+/*页码*/
+.page{height:45px; line-height:45px; padding:0 25px; color:#666}
+.page-size{float:left}
+.page-size span{float:left}
+.page-size .ui-select{float:left; margin:12px 5px 0 5px}
+.row-count{margin-left:20px}
+.page-no{float:right; padding-top:15px}
+
+/*表单*/
+.query-form{height:30px; margin-bottom:10px; padding-left:30px}
+.query-form span{float:left; line-height:30px; margin-right:5px}
+.query-form .label{width:75px}
+.query-form .ui-text, .query-form .ui-select{float:left; margin-top:4px; margin-right:20px}
+.query-form .ui-mcal{float:left; margin-right:20px}
+.query-form .close-next{margin-right:5px}
+.query-btn{padding:0 0 10px 30px; margin-bottom:10px; border-bottom:1px #ddd solid}
+
+/*操作栏*/
+.toolbar{height:22px; line-height:22px; margin-bottom:10px; padding-left:30px}
+.toolbar .ui-button{margin-right:10px}
+.toolbar .link .ui-button-label{padding:0}
+.toolbar .link .ui-button-label a{text-decoration:none; color:#333; display:block; width:60px; _width:80px; height:20px; padding:0 10px}
+
+/*通知*/
+.notify{height:22px; line-height:22px; padding:10px 0 10px 30px; color:#666; background:#fdf8d0; border-bottom:1px #d3d2d0 solid}
+.notify span{float:left; margin-right:10px}
+.notify strong{color:red}
+
+/*无结果提示*/
+.no-result{text-align:center; font-size:14px; color:#666; padding:30px 0}
+
+/*按钮*/
+.add-btn{background:url(images/icon-add.png) left center no-repeat; padding-left:15px}
+.del-btn{background:url(images/icon-del.png) left center no-repeat; padding-left:15px}
+
+/*esui*/
+.ui-dialog{border:2px solid #2980b9}
+.ui-dialog-head{background:#2980b9}
+.skin-dialog-draggable .ui-dialog-head-hover{background:#3498db}
+.ui-dialog-foot{text-align:right}
+.ui-select-layer{z-index:300}
+.ui-text{font-size:12px}

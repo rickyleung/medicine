@@ -1,0 +1,78 @@
+<!--患者信息-既往史-->
+<script id="tpl-form13" type="text/html">
+<h2>患者信息-既往史</h2>
+<div class="row">
+    <span class="label">常见疾病</span>
+    <input type="radio" hidefocus="true" title="有" name="disease" value="1" ui="type:Radio;id:Disease1;{{disabled}}" />
+    <input type="radio" hidefocus="true" title="无" name="disease" value="2" ui="type:Radio;id:Disease2;{{disabled}}" />
+    <input type="radio" hidefocus="true" title="不详" name="disease" value="3" ui="type:Radio;id:Disease3;{{disabled}}" />
+</div>
+<div class="row sub auto disease" style="display:none">
+    <div>
+        <input type="checkbox" hidefocus="true" title="心血管疾病" name="disease-type" value="1" ui="type:CheckBox;id:DiseaseType1;{{disabled}}" />
+    </div>
+    
+    <div style="overflow:hidden; padding-left:50px; display:none" class="heart-disease">
+        <span class="f">
+            <input type="checkbox" hidefocus="true" title="冠心病" name="disease-type1" value="1" ui="type:Radio;id:DiseaseType1_1;{{disabled}}" />
+            <span style="display:none" class="heart">，心功能分级 NYHA：</span>
+        </span>
+        <div ui="type:Select;id:GXBLevel;width:100;{{disabled}}" style="display:none"></div>
+        <span class="f">&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="checkbox" hidefocus="true" title="高血压" name="disease-type1" value="2" ui="type:Radio;id:DiseaseType1_2;{{disabled}}" />
+        </span>
+        <div ui="type:Select;id:GXYLevel;width:100;{{disabled}}" style="display:none"></div>
+    </div>
+    
+    <div>
+        <input type="checkbox" hidefocus="true" title="脑血管疾病" name="disease-type" value="2" ui="type:CheckBox;id:DiseaseType2;{{disabled}}" />
+    </div>
+    
+    <div style="padding-left:50px; display:none" class="brain-disease">
+        <input type="checkbox" hidefocus="true" title="缺血性脑血管病" name="disease-type2" value="1" ui="type:Radio;id:DiseaseType2_1;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="出血性脑血管病" name="disease-type2" value="2" ui="type:Radio;id:DiseaseType2_2;{{disabled}}" />
+    </div>
+    
+    <div><input type="checkbox" hidefocus="true" title="外周血管疾病" name="disease-type" value="3" ui="type:CheckBox;id:DiseaseType3;{{disabled}}" /></div>
+    <div><input type="checkbox" hidefocus="true" title="消化系统疾病" name="disease-type" value="4" ui="type:CheckBox;id:DiseaseType4;{{disabled}}" /></div>
+    <div><input type="checkbox" hidefocus="true" title="肝功能不全" name="disease-type" value="5" ui="type:CheckBox;id:DiseaseType5;{{disabled}}" /></div>
+    <div><input type="checkbox" hidefocus="true" title="肾功能不全" name="disease-type" value="6" ui="type:CheckBox;id:DiseaseType6;{{disabled}}" /></div>
+    
+    <div style="overflow:hidden">
+        <span class="f">
+            <input type="checkbox" hidefocus="true" title="糖尿病" name="disease-type" value="7" ui="type:CheckBox;id:DiseaseType7;{{disabled}}" />
+        </span>
+        <div ui="type:Select;id:TNBType;width:100;{{disabled}}" style="display:none"></div>
+    </div>
+    
+    <div>
+        <input type="checkbox" hidefocus="true" title="其他" name="disease-type" value="8" ui="type:CheckBox;id:DiseaseType8;{{disabled}}" />
+        <input type="text" value="{{data.diseasetxt}}" ui="type:TextInput;id:CustomDiseaseTypeName;width:200;{{disabled}}" />
+    </div>
+</div>
+
+<div class="row">
+    <span class="label">过敏性疾病史</span>
+    <input type="radio" hidefocus="true" title="有" name="a-disease" value="1" ui="type:Radio;id:ADisease1;{{disabled}}" />
+    <input type="radio" hidefocus="true" title="无" name="a-disease" value="2" ui="type:Radio;id:ADisease2;{{disabled}}" />
+    <input type="radio" hidefocus="true" title="不详" name="a-disease" value="3" ui="type:Radio;id:ADisease3;{{disabled}}" />
+</div>
+<div class="row sub auto a-disease" style="display:none">
+    <div>
+        <input type="checkbox" hidefocus="true" title="过敏性鼻炎" name="a-disease-type" value="1" ui="type:CheckBox;id:ADiseaseType1;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="特应性鼻炎" name="a-disease-type" value="2" ui="type:CheckBox;id:ADiseaseType2;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="过敏性结膜炎" name="a-disease-type" value="3" ui="type:CheckBox;id:ADiseaseType3;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="过敏性哮喘" name="a-disease-type" value="4" ui="type:CheckBox;id:ADiseaseType4;{{disabled}}" />
+        <input type="checkbox" hidefocus="true" title="过敏性紫癜" name="a-disease-type" value="5" ui="type:CheckBox;id:ADiseaseType5;{{disabled}}" />
+    </div>
+    <div>
+        <input type="checkbox" hidefocus="true" title="其他" name="a-disease-type" value="6" ui="type:CheckBox;id:ADiseaseType6;{{disabled}}" />
+        <input type="text" value="{{data.allergytxt}}" ui="type:TextInput;id:CustomADiseaseTypeName;width:200;{{disabled}}" />
+    </div>
+</div>
+{{#save}}
+<div class="bottom">
+    <div ui="type:Button;id:Save;skin:largeem">保 存</div>
+</div>
+{{/save}}
+</script>

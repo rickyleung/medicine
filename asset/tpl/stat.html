@@ -1,0 +1,21 @@
+<!--全局统计-->
+<script id="tpl-stat" type="text/html">
+<div class="stat-wrap">
+    <h1 class="no-bottom">全局统计</h1>
+    <div class="main">
+        <div class="sidebar"></div>
+        <div class="content">
+            <div class="chart"></div>
+            <div class="stat-grid" style="display:none">
+                <div class="no-result" style="display:none">暂无查询结果。</div>
+                <h3>本中心ADE患者基本情况</h3>
+                <div ui="type:Table;id:Grid"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</script>
+
+<script id="tpl-stat-ade-detail" type="text/html">
+<a href="#crf/doubtadr/{{id}}" class="detail">{{no}}</a>
+</script>

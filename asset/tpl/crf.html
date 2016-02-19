@@ -1,0 +1,55 @@
+<!--CRF-->
+<script id="tpl-crf" type="text/html">
+<div class="crf-wrap">
+    <h1 class="no-bottom">{{title}}</h1>
+    <div class="main">
+        <div class="sidebar">
+            <div class="progressbar">
+                <div class="progress"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="sidenav"></div>
+        </div>
+        <div class="content"><div class="crf-form"></div></div>
+    </div>
+</div>
+</script>
+
+<script id="tpl-crf-title" type="text/html">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;观察表编号：{{no}}，患者姓名缩写：{{abbr}}
+<a href="javascript:void(0)" class="btn submit-crf">{{submitTxt}}</a>
+{{#doubtBtn}}<a href="javascript:void(0)" class="btn doubt-crf">提交质疑</a>{{/doubtBtn}}
+<a href="javascript:void(0)" class="btn check-doubt">查看质疑</a>
+</script>
+
+<!--提交质疑对话框-->
+<script id="tpl-doubt-dialog" type="text/html">
+<div ui="type:Dialog;id:DoubtDialog;top:170;mask:0">
+    <div>提交质疑</div>
+    <div>
+        <div class="query-form">
+            <span>质疑字段：</span>
+            <div ui="type:Select;id:Field;width:200"></div>
+        </div>
+        <div class="query-form">
+            <span>说明：</span>
+            <input ui="type:TextInput;id:Description;width:200" type="text" />
+        </div>
+    </div>
+    <div>
+        <div ui="type:Button;id:DoubtOK">添加</div>
+        <div ui="type:Button;id:DoubtClose">取消</div>
+    </div>
+</div>
+</script>
+
+<!--查看质疑对话框-->
+<script id="tpl-check-doubt-dialog" type="text/html">
+<div ui="type:Dialog;id:CheckDoubtDialog;top:170;draggable:true;width:600">
+    <div>查看质疑</div>
+    <div><div ui="type:Table;id:Doubtlist" style="display:none"></div><span class="no-doubt" style="display:none">没有质疑</span></div>
+    <div>
+        <div ui="type:Button;id:CheckDoubtClose">关闭</div>
+    </div>
+</div>
+</script>

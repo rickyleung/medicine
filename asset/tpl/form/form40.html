@@ -1,0 +1,57 @@
+<!--合并用药-->
+<script id="tpl-form40" type="text/html">
+<h2>合并用药</h2>
+<div class="row">
+    <span class="label">有无合并用药</span>
+    <input type="radio" hidefocus="true" title="有" name="merge" value="1" ui="type:Radio;id:Merge1;{{disabled}}" />
+    <input type="radio" hidefocus="true" title="无" name="merge" value="2" ui="type:Radio;id:Merge2;{{disabled}}" />
+</div>
+<div class="drugs" style="display:none">
+    <div ui="type:Table;id:Drug"></div>
+    <div id="DrugList"></div>
+    {{#save}}
+    <div class="row">
+        <a href="javascript:void(0)" hidefocus="true" class="add-drug add-btn">添加一行</a>
+    </div>
+    {{/save}}
+</div>
+{{#save}}
+<div class="bottom">
+    <div ui="type:Button;id:Save;skin:largeem">保 存</div>
+</div>
+{{/save}}
+</script>
+
+<script id="tpl-form40-drug" type="text/html">
+{{#drug}}
+<div class="drug-block block" no="{{no}}" id="{{id}}">
+    <div class="row">
+        <span class="label">通用名称</span>
+        <input type="text" class="sug" value="{{name}}" ui="type:TextInput;id:Name{{no}};width:182;{{disabled}}" />
+    </div>
+    <div class="row">
+        <span class="label">开始日期</span>
+        <div ui="type:Calendar;id:Start{{no}};{{disabled}}"></div>
+        <span class="label c">停止日期</span>
+        <div ui="type:Calendar;id:End{{no}};{{disabled}}"></div>
+    </div>
+    <div class="row">
+        <span class="label">单次用药剂量</span>
+        <input type="text" class="en f mt7 mr0" value="{{dose}}" ui="type:TextInput;id:Dose{{no}};width:182;{{disabled}}" />
+        <span class="label c">剂量单位</span>
+        <input type="text" class="f mt7" value="{{unit}}" ui="type:TextInput;id:Unit{{no}};width:182;{{disabled}}" />
+    </div>
+    <div class="row">
+        <span class="label">给药途径</span>
+        <input type="text" class="sug f mt7 mr0" value="{{way}}" ui="type:TextInput;id:Way{{no}};width:182;{{disabled}}" />
+        <span class="label c">给药频次</span>
+        <input type="text" class="f mt7" value="{{frequency}}" ui="type:TextInput;id:Frequency{{no}};width:182;{{disabled}}" />
+    </div>
+    {{#save}}
+    <div class="row">
+        <div ui="type:Button;id:Save{{no}}">保存本行</div>
+    </div>
+    {{/save}}
+</div>
+{{/drug}}
+</script>

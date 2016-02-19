@@ -1,0 +1,25 @@
+<!--数据字典-->
+<script id="tpl-dict" type="text/html">
+<div class="dict-wrap">
+    <h1 class="no-bottom">数据字典</h1>
+    <div class="main">
+        <div class="sidebar dict-bar"></div>
+        <div class="content dict-content">
+            <div class="dict-item">
+                <div class="dict-item-list">
+                    <div class="dict-title">
+                        <span>底层字典条目：</span>
+                        <input ui="type:TextInput;id:Item;width:240" type="text" />
+                        <div ui="type:Button;id:AddToDict;">关联选中条目</div>
+                    </div>
+                    <div ui="type:Table;id:Items;select:multi;sortable:1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</script>
+
+<script id="tpl-dict-item" type="text/html">
+<span id="{{id}}">{{name}}（{{abbr}}）</span>
+</script>

@@ -1,0 +1,43 @@
+/*
+ * CRF表单
+ * 
+ * @author: Ricky
+ */
+
+h1 .submit-crf{background:#27ae60}
+h1 .submit-crf:hover{background:#2ecc71}
+h1 .doubt-crf{background:#f39c12}
+h1 .doubt-crf:hover{background:#f1c40f}
+h1 .check-doubt{background:#c0392b}
+h1 .check-doubt:hover{background:#e74c3c}
+
+.crf-form h2{margin:0 0 10px 0; font-size:14px}
+.crf-form h3{margin:0; padding:5px 0; font-size:12px; border-bottom:1px #ddd solid}
+.crf-form .row{height:36px; line-height:36px; overflow:hidden}
+.crf-form .row .label{float:left; width:100px; font-weight:bold}
+.crf-form .row .wlabel{width:auto; margin-right:10px}
+.crf-form .row .ui-cal{float:left; margin-top:7px}
+.crf-form .row .ui-select{float:left; margin-top:7px}
+.crf-form .sub{padding-left:100px}
+.crf-form .sub2{padding-left:133px}
+.crf-form .sub3{padding-left:179px}
+.crf-form .sub4{padding-left:150px}
+.crf-form .auto{height:auto}
+.crf-form .f{float:left; margin-right:5px}
+.crf-form .mt7{margin-top:7px}
+.crf-form .mr0{margin-right:0}
+.crf-form .block{border-bottom:1px #ccc dashed}
+.crf-form .bottom{padding-top:10px; height:26px; line-height:26px}
+.crf-form .c{text-align:center}
+
+#ctrltableExam1 .ui-table-hcell-text,
+#ctrltableExam3 .ui-table-hcell-text,
+#ctrltableExam4 .ui-table-hcell-text,
+#ctrltableDrug1 .ui-table-hcell-text,
+#ctrltableDrug2 .ui-table-hcell-text,
+#ctrltableMerge .ui-table-hcell-text{height:auto; overflow:visible}
+
+.times{width:650px; overflow:hidden; margin:10px 0}
+.times a{float:left; width:70px; height:20px; line-height:20px; margin:0 5px 5px 0; text-align:center; background:#fff; border:1px #a8bfd1 solid; color:#000; text-decoration:none; border-radius:3px}
+.times a.active{background:#dfe6ff; color:#3b6bad; font-weight:bold}
+.times span{float:left; height:20px; line-height:20px; cursor:pointer; color:#3b6bad; text-decoration:underline}
